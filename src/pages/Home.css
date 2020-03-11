@@ -6,11 +6,11 @@
 header {
     padding: 20px;
     text-align: center;
+    background-color: rgb(240, 202, 207);
 }
 
 article {
     padding: 20px;
-    background-color: rgb(240, 202, 207);
 }
 
 .comments {

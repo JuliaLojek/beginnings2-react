@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './Header';
-import Article from './Article';
-import Comments from './Comments';
-import Footer from './Footer';
+import './Home.css';
+import Header from '../components/Header';
+import Article from '../components/Article';
+import Comments from '../components/Comments';
+import Footer from '../components/Footer';
 
 const CONTENT = {
   title: 'My Awesome Blog',
@@ -11,7 +11,7 @@ const CONTENT = {
   footer: 'copyright 2020'
 }
 
-class App extends Component {
+class Home extends Component {
   state = {
     postDetails: {},
     loader: false,
@@ -48,4 +48,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
