@@ -1,48 +1,27 @@
 import React, { Component } from 'react';
+import HomeList from './HomeList';
 import './Home.css';
-import Header from '../components/Header';
-import Article from '../components/Article';
-import Comments from '../components/Comments';
-import Footer from '../components/Footer';
-
-const CONTENT = {
-  title: 'My Awesome Blog',
-  commentsTitle: 'Comments:',
-  footer: 'copyright 2020'
-}
 
 class Home extends Component {
   state = {
-    postDetails: {},
+    postList: [],
     loader: false,
     error: false
   };
   componentDidMount() {
     this.setState({loader: true})
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
-      .then(data => this.setState({postDetails: data, loader: false}))
+      .then(data => this.setState({postList: data, loader: false}))
       .catch(error => this.setState({error: true, loader: false}));
   };
   render() {
     return (
       <main>
-        <Header
-          title = {CONTENT.title}
-        />
-        <Article
-          loader = {this.state.loader}
-          error = {this.state.error}
-          title = {this.state.postDetails.title}
-          text = {this.state.postDetails.body}
-        >
-        </Article>
-        <Comments
-          title = {CONTENT.commentsTitle}
-        />
-        <Footer
-          text = {CONTENT.footer}
-        />
+        <h2 className="list-title">Read our awesome posts:</h2>
+        {this.state.loader === true ? "loading..." : null}
+        {this.state.error ? "oh no, an error! I can't load post data :(" : null}
+        <HomeList items={this.state.postList} />
       </main>
     );
   }

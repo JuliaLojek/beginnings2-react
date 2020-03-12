@@ -9,12 +9,23 @@ header {
     background-color: rgb(240, 202, 207);
 }
 
+h1 a {
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
 article {
     padding: 20px;
 }
 
 .comments {
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 form {
@@ -25,13 +36,20 @@ form {
     border: 1px solid black;
 }
 
-footer {
-    padding: 20px;
-    background-color: rgb(240, 202, 207);
-    font-size: 11px;
-    text-align: center;
+.single-comment, .single-post {
+    padding: 10px;
 }
 
-.single-comment {
+.list-title {
     padding: 10px;
+}
+
+.post-list-title a {
+    padding: 4px;
+    color: black;
+    background-color: rgb(240, 202, 207);
+}
+
+.post-list-body {
+    padding: 4px;
 }
